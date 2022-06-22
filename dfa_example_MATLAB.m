@@ -1,11 +1,11 @@
 %-------------------------------------------------------------------------------
 % Function
 % This script does the following steps:
-%  1. Generate random data;  
-%  2. Apply DFA;
-%  3. beta is scaling exponent of LRTC;
+%  1. Generates random data (example) | Please init X (and fs) using your own data (if necessary)  
+%  2. Performs DFA
+%  3. Estimates the scaling exponent of LRTC (parameter beta)
 % 
-% Fitting range is very important, so make sure that the DFA plot is linear within 
+% Fitting range is very important, please make sure that the DFA plot is linear within 
 % the fitting range.
 %-------------------------------------------------------------------------------
 function dfa_example_MATLAB()
@@ -13,9 +13,9 @@ function dfa_example_MATLAB()
 clc;
 
 % generate data
-N = 1000000;
-fs = 200;
-X = randn(1, N);
+N = 1000000; % number of samples
+fs = 200; % sampling rate (Hz)
+X = randn(1, N); % random data, beta should be around 0.5
 
 % DFA fitting range
 DFA_t_min = 5; % seconds, min fitting
